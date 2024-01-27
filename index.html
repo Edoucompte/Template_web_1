@@ -26,7 +26,6 @@
                 <span id="login" class="login">Login</span>
                 <span id="login-btn" class="fas fa-user login"></span>
                 <span id="signup" class="btn signup">Become a member <i class="fas fa-arrow-right"></i></span>
-
             </div>
         </div>
 
@@ -52,9 +51,11 @@
 
                     <input type="password" name="password" placeholder="your password" id="pass">
 
+                    <p> <input type="checkbox" name="remember" id="remember"> <label for="remember">Remember me?</label></p>
+
                     <input type="submit" value="Log in">
             </form>
-            <p> <input type="checkbox" name="remember" id="remember"> <label for="remember">Remember me?</label></p>
+            <p>Forget password? <a href="#" class="blue forget">click here</a></p>
             <p>Don't already have an account? <a href="#" class="signup blue"> click here</a></p>
         </div>
     </section>
@@ -93,24 +94,30 @@
             <p>Problems trying to resolve the conflict between <br> the two major reaims of Classical physics: Newtonian mechanics</p>
             <div class="card-container">
                 <div class="card">
-                    <img src="images/logo-advice1.png" alt="done_icon">
+                    <div class="image-container cont1">
+                        <img src="images/logo-advice1.png" alt="done_icon">
+                    </div>
                     <h3 class="bold">Book library</h3>
                     <span class="stick red-bg"></span>
-                    <p>The gradual accumulation of information about atomic and small scale behaviour</p>
+                    <p>The gradual accumulation of information about atomic and small scale behaviour ...</p>
                 </div>
                 
                 <div class="card">
-                    <img src="images/logo-advice2.png" alt="done_icon">
+                    <div class="image-container cont2">
+                        <img src="images/logo-advice2.png" alt="done_icon">
+                    </div>
                     <h3 class="bold">Sales planning</h3>
                     <span class="stick red-bg"></span>
-                    <p>The gradual accumulation of information about atomic and small scale behaviour</p>
+                    <p>The gradual accumulation of information about atomic and small scale behaviour ...</p>
                 </div>
                 
                 <div class="card">
-                    <img src="images/logo-advice3.png" alt="done_icon">
+                    <div class="image-container cont3">
+                        <img src="images/logo-advice3.png" alt="done_icon">
+                    </div>
                     <h3 class="bold">Evolution time</h3>
                     <span class="stick red-bg"></span>
-                    <p>The gradual accumulation of information about atomic and small scale behaviour</p>
+                    <p>The gradual accumulation of information about atomic and small scale behaviour ...</p>
                 </div>
             </div>   
                 
@@ -149,16 +156,22 @@
         <!-- card frame -->
         <div class="card-container">
             <div class="card">
-                <img src="images/sale1.png" alt="">
+                <img src="images/sale1.jpg" alt="">
 
                 <!-- writing on the image -->
                 <div class="onImage">
                     <span class="status red-bg bold">Sale</span>
 
                     <div class="logos">
-                        <img src="images/logo1.png" alt="" class="logo">
-                        <img src="images/logo2.png" alt="" class="logo">
-                        <img src="images/logo3.png" alt="" class="logo">
+                        <div>
+                            <img src="images/logo1.png" alt="" class="logo">
+                        </div>
+                        <div>
+                            <img src="images/logo2.png" alt="" class="logo">
+                        </div>
+                        <div>
+                            <img src="images/logo3.png" alt="" class="logo">
+                        </div>
                     </div>
                 </div>
 
@@ -170,19 +183,33 @@
                     </p>
                     <h3 class="sector">Graphic Design</h3>
                     <p>We focus on ergonomics and meeting where you work. It's only keystroke away.</p>
-                    <p class="numberSold bold"> 15 sales</p>
+                    <p class="numberSold bold"> 
+                        <span class="ico">
+                            <img src="images/download.png" alt="download icon">
+                        </span>
+                        15 sales
+                    </p>
                     <p class="price"> <span class="l-gray bold">$16.48</span> <span class="green bold">$6.48</span></p>
                     <p class="flx">
-                        <span class="duration"> 22hr 30min</span>
-                        <span class="long">64 lessons</span>
-                        <span class="progress">Progess</span>
+                        <span class="duration">
+                            <span class="ico"> <img src="images/logo-time.png" alt="timer"></span>
+                            22hr 30min
+                        </span>
+                        <span class="long">
+                            <span class="ico"> <img src="images/logo-course.png" alt="course"></span>
+                            64 lessons
+                        </span>
+                        <span class="progress">
+                            <span class="ico"> <img src="images/logo-progress.png" alt="progress"></span>
+                            Progess
+                        </span>
                     </p>
                     <a href="#" class="bold blue">Learn more</a>
                 </div>
             </div>
 
             <div class="card">
-                <img src="images/sale2.png" alt="">
+                <img src="images/sale2.jpg" alt="">
 
 
                 <!-- writing on the image -->
@@ -190,9 +217,15 @@
                     <span class="status red-bg bold">Sale</span>
 
                     <div class="logos">
-                        <img src="images/logo1.png" alt="" class="logo">
-                        <img src="images/logo2.png" alt="" class="logo">
-                        <img src="images/logo3.png" alt="" class="logo">
+                        <div>
+                            <img src="images/logo1.png" alt="" class="logo">
+                        </div>
+                        <div>
+                            <img src="images/logo2.png" alt="" class="logo">
+                        </div>
+                        <div>
+                            <img src="images/logo3.png" alt="" class="logo">
+                        </div>
                     </div>
                 </div>
 
@@ -204,28 +237,48 @@
                     </p>
                     <h3 class="sector">Graphic Design</h3>
                     <p>We focus on ergonomics and meeting where you work. It's only keystroke away.</p>
-                    <p class="numberSold bold"> 15 sales</p>
+                    <p class="numberSold bold"> 
+                        <span class="ico">
+                            <img src="images/download.png" alt="download icon">
+                        </span>
+                        15 sales
+                    </p>
                     <p class="price"> <span class="l-gray bold">$16.48</span> <span class="green bold">$6.48</span></p>
                     <p class="flx">
-                        <span class="duration"> 22hr 30min</span>
-                        <span class="long">64 lessons</span>
-                        <span class="progress">Progess</span>
+                        <span class="duration">
+                            <span class="ico"> <img src="images/logo-time.png" alt="timer"></span>
+                            22hr 30min
+                        </span>
+                        <span class="long">
+                            <span class="ico"> <img src="images/logo-course.png" alt="course"></span>
+                            64 lessons
+                        </span>
+                        <span class="progress">
+                            <span class="ico"> <img src="images/logo-progress.png" alt="progress"></span>
+                            Progess
+                        </span>
                     </p>
                     <a href="#" class="bold blue">Learn more</a>
                 </div>
             </div>
 
             <div class="card">
-                <img src="images/sale3.png" alt="">
+                <img src="images/sale3.jpg" alt="">
 
                 <!-- writing on the image -->
                 <div class="onImage">
                     <span class="status red-bg bold">Sale</span>
 
                     <div class="logos">
-                        <img src="images/logo1.png" alt="" class="logo">
-                        <img src="images/logo2.png" alt="" class="logo">
-                        <img src="images/logo3.png" alt="" class="logo">
+                        <div>
+                            <img src="images/logo1.png" alt="" class="logo">
+                        </div>
+                        <div>
+                            <img src="images/logo2.png" alt="" class="logo">
+                        </div>
+                        <div>
+                            <img src="images/logo3.png" alt="" class="logo">
+                        </div>
                     </div>
                 </div>
 
@@ -237,12 +290,26 @@
                     </p>
                     <h3 class="sector">Graphic Design</h3>
                     <p>We focus on ergonomics and meeting where you work. It's only keystroke away.</p>
-                    <p class="numberSold bold"> 15 sales</p>
+                    <p class="numberSold bold"> 
+                        <span class="ico">
+                            <img src="images/download.png" alt="download icon">
+                        </span>
+                        15 sales
+                    </p>
                     <p class="price"> <span class="l-gray bold">$16.48</span> <span class="green bold">$6.48</span></p>
                     <p class="flx">
-                        <span class="duration"> 22hr 30min</span>
-                        <span class="long">64 lessons</span>
-                        <span class="progress">Progess</span>
+                        <span class="duration">
+                            <span class="ico"> <img src="images/logo-time.png" alt="timer"></span>
+                            22hr 30min
+                        </span>
+                        <span class="long">
+                            <span class="ico"> <img src="images/logo-course.png" alt="course"></span>
+                            64 lessons
+                        </span>
+                        <span class="progress">
+                            <span class="ico"> <img src="images/logo-progress.png" alt="progress"></span>
+                            Progess
+                        </span>
                     </p>
                     <a href="#" class="bold blue">Learn more</a>
                 </div>
@@ -274,7 +341,7 @@
 
                 <p>Slate helps you see how many more days you need to work to reach your financial goal for the month and year</p>
                 <div class="poster">
-                    <img src="images/rate_p1.png" alt="">
+                    <img src="images/testimonial-user-cover-167.png" alt="">
                     <p>
                         <span class="name blue bold">Bernard Miles</span>
                         <span class="work">Designer</span>
@@ -292,7 +359,7 @@
 
                 <p>Slate helps you see how many more days you need to work to reach your financial goal for the month and year</p>
                 <div class="poster">
-                    <img src="images/rate_p2.png" alt="">
+                    <img src="images/testimonial-user-cover-124.png" alt="">
                     <p>
                         <span class="name blue bold">Bernard Miles</span>
                         <span class="work">Designer</span>
@@ -310,7 +377,7 @@
 
                 <p>Slate helps you see how many more days you need to work to reach your financial goal for the month and year</p>
                 <div class="poster">
-                    <img src="images/rate_p3.png" alt="">
+                    <img src="images/testimonial-user-cover-169.png" alt="">
                     <p>
                         <span class="name blue bold">Bernard Miles</span>
                         <span class="work">Designer</span>
@@ -363,7 +430,7 @@
                     <a href="#" class="business">Business Marketing</a>
                     <a href="#" class="user">User Analytic</a>
                     <a href="#" class="live">Live Chat</a>
-                    <a href="#" class="suuport">Unlimited Supp</a>
+                    <a href="#" class="suport">Unlimited Supp</a>
                 </div>
             </div>
             <div class="bloc">

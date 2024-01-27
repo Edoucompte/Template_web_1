@@ -1,7 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Satisfy?display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 * {
-  font-family: "Poppins", sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,8 +8,24 @@
   border: none;
   text-decoration: none;
   transition: 0.2s linear;
+  scale: 1;
 }
 
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes fadeUp {
+  0% {
+    transform: translateY(5rem);
+    opacity: 0;
+  }
+}
 section {
   padding: 9% 13%;
 }
@@ -20,8 +35,8 @@ h2 {
 }
 
 p {
-  font-size: 0.95rem;
-  color: rgb(111, 110, 110);
+  font-size: 1.1rem;
+  color: rgb(115, 115, 115);
 }
 
 .btn {
@@ -31,15 +46,15 @@ p {
 }
 
 .blue {
-  color: rgb(65, 155, 211);
+  color: rgb(35, 166, 240);
 }
 
 .red {
-  color: rgb(225, 50, 50);
+  color: rgb(231, 64, 64);
 }
 
 .gray {
-  color: rgb(111, 110, 110);
+  color: rgb(115, 115, 115);
 }
 
 .l-gray {
@@ -51,11 +66,11 @@ p {
 }
 
 .blue-bg {
-  background-color: rgb(65, 155, 211);
+  background-color: rgb(35, 166, 240);
 }
 
 .red-bg {
-  background-color: rgb(225, 50, 50);
+  background-color: rgb(231, 64, 64);
   color: white;
 }
 
@@ -70,35 +85,24 @@ p {
 }
 
 .fa-star, .fa-star-half-alt {
-  color: rgb(213, 213, 11);
+  color: rgb(255, 206, 49);
 }
 
 .fab {
-  color: rgb(65, 155, 211);
+  color: rgb(35, 166, 240);
   margin: 0.5rem;
   margin-top: 2rem;
+  scale: 1.4;
 }
 
 header {
-  background-image: rgb(44, 38, 38);
-  position: relative;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/hero-2-cover.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   font-weight: bolder;
   display: flex;
   flex-direction: column;
-  opacity: 1.5;
-}
-header::before {
-  content: "";
-  background-image: url("../images/header1.jpeg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
 }
 header #menu {
   display: flex;
@@ -139,7 +143,7 @@ header #menu #logging #login {
   border-radius: 0.5rem;
 }
 header #menu #logging #login:hover {
-  background: rgb(65, 155, 211);
+  background: rgb(35, 166, 240);
   border-radius: 0.5rem;
   padding: 1rem;
 }
@@ -158,7 +162,7 @@ header #menu #logging .btn-menu {
 }
 header #menu #logging .btn {
   margin-left: 2rem;
-  background: rgb(65, 155, 211);
+  background: rgb(35, 166, 240);
 }
 header #content {
   margin: auto;
@@ -185,15 +189,19 @@ header #content #p3 {
 }
 header #content .btn {
   color: white;
-  background: rgb(65, 155, 211);
+  background: rgb(35, 166, 240);
 }
 
 .login_sec {
-  position: absolute;
+  position: fixed;
   top: 7rem;
+  left: 0;
+  right: 0;
   background: white;
-  width: 98vw;
-  height: 95vh;
+  width: 100%;
+  height: calc(100vh - 7rem);
+  z-index: 1000;
+  animation: fadeUp 0.4s linear;
   display: none;
 }
 .login_sec.active {
@@ -224,25 +232,42 @@ header #content .btn {
   border-radius: 0.5rem;
 }
 .login_sec .content form input[type=submit] {
-  width: 25%;
-  background: white;
-  color: rgb(65, 155, 211);
-  border: 1px solid rgb(65, 155, 211);
-  border-radius: 0.8rem;
+  background: rgb(35, 166, 240);
+  color: white;
+  border: 1px solid rgb(35, 166, 240);
+  border-radius: 0.4rem;
+  padding-left: 40%;
   margin: auto;
 }
 .login_sec .content form input[type=submit]:hover {
-  background: rgb(65, 155, 211);
+  background: rgb(55, 179, 55);
   color: white;
   transition: 1s ease;
 }
+.login_sec .content form p {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.9rem;
+  gap: 1rem;
+}
+.login_sec .content form p input {
+  width: 20px;
+  margin-left: 5px;
+}
+.login_sec .content p {
+  font-size: 0.9rem;
+}
 
 .signupSec {
-  position: absolute;
+  position: fixed;
   top: 7rem;
+  left: 0;
+  right: 0;
   background: white;
-  width: 98vw;
-  height: 95vh;
+  width: 100%;
+  height: 90%;
+  animation: fadeUp 0.4s linear;
+  z-index: 1000;
   display: none;
 }
 .signupSec.active {
@@ -269,85 +294,126 @@ header #content .btn {
   display: flex;
   width: 100%;
   background: rgb(200, 197, 197);
-  padding: 0.4rem 0.5rem;
+  padding: 0.5rem 0.5rem;
   border-radius: 0.5rem;
 }
 .signupSec .content form input[type=submit] {
-  width: 25%;
-  background: white;
-  color: rgb(65, 155, 211);
-  border: 1px solid rgb(65, 155, 211);
-  border-radius: 0.8rem;
+  background: rgb(35, 166, 240);
+  color: white;
+  border: 1px solid rgb(35, 166, 240);
+  border-radius: 0.4rem;
   margin: auto;
+  padding-left: 40%;
 }
 .signupSec .content form input[type=submit]:hover {
-  background: rgb(65, 155, 211);
+  background: rgb(55, 179, 55);
   color: white;
   transition: 1s ease;
 }
+.signupSec .content p {
+  font-size: 0.9rem;
+}
 
+#advice .container h2 {
+  margin: 1rem 0;
+}
 #advice .container .card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  gap: 5rem;
-  padding: 2rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 2rem;
+  padding: 5rem 0;
+}
+#advice .container .card-container p {
+  font-size: 18px;
 }
 #advice .container .card-container .card {
   padding: 2rem 2rem;
   text-align: left;
   background: white;
-  box-shadow: -0.2rem 0.5rem 20px rgba(0, 0, 0, 0.1);
-  max-width: 300px;
+  box-shadow: 0rem 13px 19px rgba(0, 0, 0, 0.1);
+  min-width: 100px;
+  width: 17rem;
+  max-width: 19rem;
 }
 #advice .container .card-container .card h3 {
-  font-size: 1.9rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 1rem 0;
 }
-#advice .container .card-container .card img {
-  width: 4rem;
-  height: 4rem;
-  margin: 0 2rem;
+#advice .container .card-container .card .image-container {
+  width: 70px;
+  height: 76px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+}
+#advice .container .card-container .card .image-container img {
+  margin: auto;
+  width: 32px;
+  height: 32px;
+}
+#advice .container .card-container .card .cont1 {
+  background: rgb(255, 220, 209);
+}
+#advice .container .card-container .card .cont2 {
+  background: rgb(185, 234, 168);
+}
+#advice .container .card-container .card .cont3 {
+  background: rgb(178, 227, 255);
+}
+#advice .container .card-container .card .stick {
+  width: 25%;
+  margin-bottom: 0.8rem;
 }
 
 .course {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8rem;
 }
 .course .img-container {
-  flex: 1 1 25rem;
+  width: 30rem;
+}
+.course .img-container img {
+  width: 30rem;
 }
 .course .writing {
   position: relative;
   left: 3rem;
   top: 1.5rem;
+  width: 29rem;
 }
 .course .writing span {
   padding: 0.2rem;
 }
 .course .writing h2 {
   margin: 1.7rem 0;
+  font-size: 40px;
+  line-height: 50px;
 }
 .course .writing p {
   margin-bottom: 1.3rem;
 }
 
+.sales .container h2 {
+  margin: 1rem 0;
+}
 .sales .card-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
   align-items: center;
   margin-top: 5rem;
 }
 .sales .card-container .card {
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: 280px;
   position: relative;
 }
 .sales .card-container .card img {
-  width: 383px;
-  height: 337px;
+  width: 280px;
+  height: 280px;
 }
 .sales .card-container .card .onImage {
   position: absolute;
@@ -364,28 +430,33 @@ header #content .btn {
   justify-content: center;
   gap: 0.5rem;
   position: inherit;
-  left: 6.8rem;
-  top: 16.5rem;
+  left: 5rem;
+  top: 14rem;
 }
-.sales .card-container .card .onImage .logos .logo {
-  width: 3rem;
-  height: 3rem;
-  border-radius: 1.5rem;
+.sales .card-container .card .onImage .logos div {
+  padding: 12px 10px 9px 10px;
+  background: white;
+  border-radius: 20px;
+}
+.sales .card-container .card .onImage .logos div .logo {
+  width: 20px;
+  height: 20px;
   cursor: pointer;
 }
 .sales .card-container .card .content {
-  padding: 2.5rem;
+  padding: 1rem;
+  width: 300px;
 }
 .sales .card-container .card .content .flex {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 9rem;
+  gap: 6.5rem;
   width: 4rem;
 }
 .sales .card-container .card .content .flex .rate {
   color: white;
-  background: rgb(44, 38, 38);
+  background: rgba(0, 0, 0, 0.5);
   padding: 0.5rem;
   border-radius: 0.5rem;
   display: flex;
@@ -393,6 +464,14 @@ header #content .btn {
 }
 .sales .card-container .card .content .sector {
   margin: 1rem 0;
+}
+.sales .card-container .card .content .ico {
+  width: 15px;
+  height: 15px;
+}
+.sales .card-container .card .content .ico img {
+  width: 15px;
+  height: 15px;
 }
 .sales .card-container .card .content .numberSold {
   margin: 0.6rem 0;
@@ -404,6 +483,10 @@ header #content .btn {
 .sales .card-container .card .content .flx {
   display: flex;
   justify-content: space-between;
+  margin: 0 0.1rem;
+}
+.sales .card-container .card .content .flx span {
+  font-size: 0.9rem;
 }
 .sales .card-container .card .content a {
   position: relative;
@@ -411,14 +494,17 @@ header #content .btn {
   left: 30%;
   padding: 0.5rem;
   border-radius: 1.5rem;
-  border: 1px solid rgb(65, 155, 211);
+  border: 1px solid rgb(35, 166, 240);
 }
 
 .rates .opinion-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  gap: 19rem;
-  margin: 5rem 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: 1rem;
+  margin: 5rem 0;
+}
+.rates .opinion-container .opinion {
+  width: 11rem;
 }
 .rates .opinion-container .opinion p {
   text-align: center;
@@ -470,8 +556,8 @@ header #content .btn {
 footer .foot {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  gap: 8rem;
-  padding: 1rem;
+  gap: 3rem;
+  padding: 2rem;
   justify-content: center;
 }
 footer .foot .bloc h3 {
@@ -483,7 +569,7 @@ footer .foot .bloc .content {
 }
 footer .foot .bloc .content a {
   margin: 0.5rem 0;
-  color: rgb(65, 155, 211);
+  color: rgb(35, 166, 240);
 }
 footer .copyright {
   text-align: center;
@@ -492,7 +578,54 @@ footer .copyright {
   background: rgb(242, 240, 240);
 }
 
-@media (max-width: 795px) {
+@media (max-width: 645px) {
+  footer .foot {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  header #content {
+    padding: 0;
+    scale: 0.8;
+  }
+}
+@media (min-width: 646px) and (max-width: 870px) {
+  footer .foot {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 15rem;
+  }
+}
+@media (max-width: 870px) {
+  .course .img-container {
+    width: 20rem;
+  }
+  .course .img-container img {
+    width: 20rem;
+  }
+  .course .writing {
+    scale: 0.8;
+  }
+  .rates .opinion-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    scale: 1;
+  }
+  .rates .opinion-container .opinion {
+    margin: auto;
+  }
+}
+@media (min-width: 871px) and (max-width: 1045px) {
+  .rates .opinion-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 1rem;
+    margin: 3rem 0;
+    scale: 0.8;
+  }
+}
+@media (max-width: 1045px) {
   header #menu #logging {
     left: 50%;
   }
@@ -508,33 +641,35 @@ footer .copyright {
     top: 0rem;
   }
   header #menu #logging #login-btn:hover {
-    background: rgb(65, 155, 211);
+    background: rgb(35, 166, 240);
     transition: 1s ease;
   }
-  .course .img-container img {
-    width: 80vw;
-    height: 60vh;
+  #advice .container .card-container, .sales .card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    scale: 1;
   }
-}
-@media (max-width: 892px) {
-  .sales .card-container {
-    justify-content: center;
-  }
-  .sales .card-container .card {
+  #advice .container .card-container .card, .sales .card-container .card {
     margin: auto;
   }
+  .course {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
 }
-@media (max-width: 1100px) {
+@media (max-width: 1210px) {
   header #menu nav {
     position: absolute;
-    top: 12%;
+    top: 6rem;
     left: 0;
     right: 0;
     background: white;
     border-top: 0.5rem solid rgba(0, 0, 0, 0.2);
     border-bottom: 0.5rem solid rgba(0, 0, 0, 0.2);
-    width: 98vw;
-    height: 12rem;
+    width: 100%;
+    height: 26vh;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -558,20 +693,32 @@ footer .copyright {
   header #menu #logging .btn-menu {
     display: inline-block;
     top: 1rem;
+    color: white;
+    fill: white;
   }
   header #menu #logging .btn-menu:hover {
-    background-color: rgb(65, 155, 211);
+    background-color: rgb(35, 166, 240);
     transition: 1s ease;
   }
-  .course {
-    flex-wrap: wrap;
-  }
 }
-@media (max-width: 1568px) {
-  .rates .opinion-container {
-    gap: 5rem;
+@media (min-width: 1046px) and (max-width: 1210px) {
+  section {
+    padding: 9% 6%;
   }
-  .rates .opinion-container .opinion {
-    width: 75%;
+  #advice .container .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1rem;
+    scale: 0.8;
+  }
+  .course {
+    margin: auto;
+  }
+  .sales .card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 1rem;
+    scale: 0.8;
+    margin: 9% 4%;
   }
 }/*# sourceMappingURL=style.css.map */

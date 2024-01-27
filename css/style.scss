@@ -1,28 +1,56 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Satisfy?display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
 
 *{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     margin: 0; padding: 0;
     box-sizing: border-box;
     outline: none; border: none;
     text-decoration: none;
     transition: .2s linear;
+    scale: 1;
 }
 
-$dark-bg: rgb(44, 38, 38);
-$blue: rgb(65, 155, 211);
-$red: rgb(225, 50, 50);
-$gray: rgb(111, 110, 110);
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+$dark-bg: rgba(0, 0, 0, 0.5);
+
+$blue: rgba(35, 166, 240, 1);
+$light-blue: rgba(178, 227, 255, 1);
+
+$red: rgba(231, 64, 64, 1);
+$light-red: rgba(255, 220, 209, 1);
+
+$gray: rgb(115, 115, 115);
 $light-gray: rgb(200, 197, 197);
+
 $green: rgb(55, 179, 55);
+$light-green: rgba(185, 234, 168, 1);
+
+$yellow: rgba(255, 206, 49, 1);
 $border: .5rem solid rgba(0,0,0,.2);
-$box-shadow: -0.2rem 0.5rem 20px rgba(0,0,0, .1);
+$box-shadow: 0rem 13px 19px rgba(0,0,0, .1);
 
 @mixin grid($val, $gap) {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax($val, 1fr));
     gap: $gap;
+}
+
+
+// animation
+@keyframes fadeUp{
+    0%{
+        transform: translateY(5rem);
+        opacity: 0;
+    }
 }
 
 section{
@@ -34,7 +62,7 @@ h2{
 }
 
 p{
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     color: $gray;
 }
 
@@ -44,6 +72,8 @@ p{
     padding: 1rem 1.5rem;
 }
 
+
+//colors
 .blue{
     color: $blue;
 }
@@ -69,6 +99,7 @@ p{
     background-color: $red;
     color: white;
 }
+//colors class end
 
 .bold{
     font-weight: bolder;
@@ -84,37 +115,27 @@ p{
 
 //stars
 .fa-star, .fa-star-half-alt{
-    color: rgb(213, 213, 11);
+    color: $yellow;
 }
 
 //Social network
 .fab{
     color: $blue;
     margin: .5rem;
-    margin-top: 2rem ;
+    margin-top: 2rem;
+    scale: 1.4;
 }
 
+//section class starts
 header{
-    background-image: $dark-bg ;
-    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url("../images/hero-2-cover.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
     font-weight: bolder;
     display: flex;
     flex-direction: column;
-    opacity: 1.5;
-
-    &::before{
-        content: "";
-        background-image: url("../images/header1.jpeg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: -1;
-    }
 
     #menu{
         display: flex;
@@ -224,11 +245,13 @@ header{
 }
 
 .login_sec{
-    position: absolute;
-    top: 7rem;
+    position: fixed;
+    top: 7rem; left: 0; right: 0;
     background: white;
-    width: 98vw;
-    height: 95vh;
+    width: 100%;
+    height: calc(100vh - 7rem);
+    z-index: 1000; 
+    animation: fadeUp .4s linear;
     display: none;
 
 
@@ -263,30 +286,48 @@ header{
             }
 
             input[type="submit"]{
-                width: 25%;
-                background: white;
-                color: $blue;
+                background: $blue;
+                color: white;
                 border: 1px solid $blue;
-                border-radius: .8rem;
+                border-radius: .4rem;
+                padding-left: 40%;
                 margin: auto;
 
                 &:hover{
-                    background: $blue;
+                    background: $green;
                     color: white;
                     transition: 1s ease;
                 }
                 
             }
+
+            p{
+                display: flex;
+                flex-direction: row;
+                font-size: .9rem;
+                gap: 1rem;
+                
+                input{
+                    width: 20px;
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        p{
+            font-size: .9rem;
         }
     }
 }
 
 .signupSec{
-    position: absolute;
-    top: 7rem;
+    position: fixed;
+    top: 7rem; left: 0; right: 0;
     background: white;
-    width: 98vw;
-    height: 95vh;
+    width: 100%;
+    height: 90%;
+    animation: fadeUp .4s linear;
+    z-index: 1000;
     display: none;
 
 
@@ -316,49 +357,93 @@ header{
                 display: flex;
                 width: 100%;
                 background: $light-gray;
-                padding: .4rem .5rem;
+                padding: .5rem .5rem;
                 border-radius: .5rem;
             }
 
             input[type="submit"]{
-                width: 25%;
-                background: white;
-                color: $blue;
+                background: $blue;
+                color: white;
                 border: 1px solid $blue;
-                border-radius: .8rem;
+                border-radius: .4rem;
                 margin: auto;
+                padding-left: 40%;
 
                 &:hover{
-                    background: $blue;
+                    background: $green;
                     color: white;
                     transition: 1s ease;
                 }
                 
             }
+
+        }
+        p{
+            font-size: .9rem;
         }
     }
 }
 
+#advice .container{
+    h2{
+        margin: 1rem 0;
+    }
 
-#advice .container .card-container{
-    @include grid(18rem, 5rem);
-    padding: 2rem 0;
 
-    .card{
-        padding: 2rem 2rem;
-        text-align: left;
-        background: white;
-        box-shadow: $box-shadow;
-        max-width: 300px;
+    .card-container{
+        @include grid(17rem, 2rem);
+        padding: 5rem 0;
 
-        h3{
-            font-size: 1.9rem;
+        p{
+            font-size: 18px;
         }
 
-        img{
-            width: 4rem;
-            height: 4rem;
-            margin: 0 2rem;
+        .card{
+            padding: 2rem 2rem;
+            text-align: left;
+            background: white;
+            box-shadow: $box-shadow;
+            min-width: 100px;
+            width: 17rem;
+            max-width: 19rem;
+
+            h3{
+                font-size : 1.5rem;
+                font-weight: 700;
+                margin: 1rem 0;
+
+            }
+
+            .image-container{
+                width: 70px;
+                height: 76px;
+                border-radius: 10px;
+                display: flex;
+                align-items: center;
+
+                img{
+                    margin: auto;
+                    width: 32px;
+                    height: 32px;
+                }
+            }
+
+            .cont1{
+                background: $light-red;
+            }
+
+            .cont2{
+                background: $light-green;
+            }
+
+            .cont3{
+                background: $light-blue;
+            }
+
+            .stick{
+                width: 25%;
+                margin-bottom: 0.8rem;
+            }
         }
     }
 }
@@ -367,10 +452,13 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8rem;
 
     .img-container{
-        flex: 1 1 25rem;    
+        width: 30rem;
+
+        img{
+            width: 30rem;
+        }
     }
 
 
@@ -378,6 +466,7 @@ header{
         position: relative;
         left: 3rem;
         top: 1.5rem;
+        width: 29rem;
 
         span{
             padding: .2rem;
@@ -385,6 +474,8 @@ header{
     
         h2{
             margin: 1.7rem 0;
+            font-size: 40px;
+            line-height: 50px;
         }
     
         p{
@@ -396,20 +487,25 @@ header{
 }
 
 .sales{
+
+    .container h2{
+        margin: 1rem 0;
+    }
+
     .card-container{
-        @include grid(20rem, .5rem);
+        @include grid(280px, 1rem);
         align-items: center;
         margin-top: 5rem;
 
         .card{
             display: flex;
             flex-direction: column;
-            width: 400px;
+            width: 280px;
             position: relative;
 
             img{
-                width: 383px;
-                height: 337px;
+                width: 280px;
+                height: 280px;
             }
             
             .onImage{
@@ -429,28 +525,37 @@ header{
                     justify-content: center;
                     gap: .5rem;
                     position: inherit;
-                    left: 6.8rem;
-                    top: 16.5rem;
+                    left: 5rem;
+                    top: 14rem;
 
-                    .logo{
-                        width: 3rem;
-                        height: 3rem;
-                        border-radius: 1.5rem;
-                        cursor: pointer;
+                    div{
+                        padding: 12px 10px 9px 10px;
+                        background: white;
+                        border-radius: 20px;
+
+                        .logo{
+                            width: 20px;
+                            height: 20px;
+                            cursor: pointer;
+                            
+                        }
+
                     }
+
                 }
 
 
             }
 
             .content{
-                padding: 2.5rem;
+                padding: 1rem;
+                width: 300px;
     
                 .flex{
                     display: flex;
                     flex-direction: row;
                     justify-content: space-between;
-                    gap: 9rem;
+                    gap: 6.5rem;
                     width: 4rem;
 
                     .rate{
@@ -467,6 +572,15 @@ header{
                     margin: 1rem 0;
                 }
 
+                .ico{
+                    width: 15px;
+                    height: 15px;
+
+                    img{
+                        width: 15px; height: 15px;
+                    }
+                }
+
                 .numberSold{
                     margin: .6rem 0;
                 }
@@ -479,6 +593,11 @@ header{
                 .flx{
                     display: flex;
                     justify-content: space-between;
+                    margin: 0 0.1rem;
+
+                    span{
+                        font-size: 0.9rem;
+                    }
                 }
 
                 a{
@@ -498,12 +617,12 @@ header{
 
 .rates{
     .opinion-container{
-        @include grid(10rem, 19rem);
-        margin: 5rem 2rem;
+        @include grid(17rem, 1rem);
+        margin: 5rem 0;
 
         
         .opinion{
-            
+            width: 11rem;
             p{
                 text-align: center;
             }
@@ -565,11 +684,12 @@ header{
 
     }
 }
+//section class end
 
 footer {
     .foot{
-        @include grid(10rem, 8rem);
-        padding: 1rem;
+        @include grid(10rem, 3rem);
+        padding: 2rem;
         justify-content: center;
 
 
@@ -600,11 +720,70 @@ footer {
 }
 
 
-@media (max-width:795px){
+@media (max-width: 645px){
+    footer .foot{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+    }
+
+    header #content {
+        padding: 0;
+        scale: 0.8;
+    }
+}
+
+@media (min-width: 646px) and (max-width:870px){
+    footer .foot{
+        @include grid(10rem, 15rem);
+    }
+}
+
+@media (max-width:870px){
+    .course{
+        .img-container{
+           width: 20rem;
+           
+            img{
+                width: 20rem;
+            }
+        
+        }
+
+        .writing{
+            scale: .8;
+        }
+    }
+
+    .rates{
+        .opinion-container{
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            scale: 1;
+
+            .opinion{
+                margin: auto;
+            }
+        }
+    }
+}
+
+@media (min-width: 871px) and  (max-width:1045px){
+    .rates .opinion-container{
+        @include grid(10rem, 1rem);
+        margin: 3rem 0;
+        scale: 0.8;
+    }
     
+}
+
+@media (max-width:1045px){
+
     header #menu #logging{
         left: 50%;
-
+    
         #login, #signup{
             display: none;
         }
@@ -623,39 +802,39 @@ footer {
                 transition: 1s ease;
             }
         }
-    }
+    } 
+    
+    #advice .container .card-container, .sales .card-container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        scale: 1;
 
-    .course .img-container img{
-        width: 80vw;
-        height: 60vh;
-    }
-}
-
-@media (max-width:892px){
-    .sales{
-        .card-container{
-            justify-content: center;
-
-            .card{
-                margin: auto;
-            }
+        .card{
+            margin: auto;
         }
     }
+
+    .course{
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
 }
 
-@media (max-width:1100px){
 
+@media (max-width:1210px){
     header #menu{
         nav{
             position: absolute;
-            top: 12%; left: 0; right: 0;
+            top: 6rem; left: 0; right: 0;
 
             background: white;
             border-top: $border;
             border-bottom: $border;
 
-            width: 98vw;
-            height: 12rem;
+            width: 100%;
+            height: 26vh;
             padding: 2rem;
 
             display: flex;
@@ -680,6 +859,8 @@ footer {
             .btn-menu{
                 display: inline-block;
                 top: 1rem;
+                color: white;
+                fill: white;
 
                 &:hover{
                     background-color: $blue;
@@ -688,20 +869,37 @@ footer {
             }
         }
     }
-
-    .course{
-        flex-wrap: wrap;
-    }
-   
 }
 
-@media (max-width:1568px){
-    .rates{
-        .opinion-container{
-            gap: 5rem;
-            .opinion{
-                width: 75%;
-            }
+@media (min-width: 1046px) and  ( max-width:1210px){
+
+    section{
+        padding: 9% 6%;
+    }
+
+    
+
+    
+    #advice .container{
+        
+        .card-container{
+            @include grid(16rem, 1rem);
+            scale: 0.8;
+        }
+
+    }
+
+    .course{
+        margin: auto;
+    }
+
+    .sales{
+        
+        .card-container{
+            @include grid(16rem, 1rem);
+            scale: 0.8;
+            margin: 9% 4%;
         }
     }
+   
 }
