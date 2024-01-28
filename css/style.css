@@ -197,18 +197,21 @@ header #content .btn {
   top: 7rem;
   left: 0;
   right: 0;
-  background: white;
   width: 100%;
   height: calc(100vh - 7rem);
   z-index: 1000;
   animation: fadeUp 0.4s linear;
   display: none;
+  background: transparent;
 }
 .login_sec.active {
   display: flex;
 }
 .login_sec .content {
+  position: fixed;
+  right: 10px;
   margin: auto;
+  background: #fff;
   padding: 2rem 2rem;
   border: 1px solid rgb(200, 197, 197);
   border-radius: 1rem;
@@ -673,12 +676,10 @@ footer .copyright {
     padding: 2rem;
     display: flex;
     flex-direction: column;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   }
   header #menu nav.active {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     transition: 1s ease;
   }
   header #menu nav a {
@@ -721,4 +722,6 @@ footer .copyright {
     scale: 0.8;
     margin: 9% 4%;
   }
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

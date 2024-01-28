@@ -246,13 +246,15 @@ header{
 
 .login_sec{
     position: fixed;
-    top: 7rem; left: 0; right: 0;
-    background: white;
+    top: 7rem; left: 0 ;  right: 0;
     width: 100%;
     height: calc(100vh - 7rem);
     z-index: 1000; 
     animation: fadeUp .4s linear;
     display: none;
+
+    // remove bg color here 
+    background: transparent;
 
 
     &.active{
@@ -260,7 +262,12 @@ header{
     }
 
     .content{
+        // fix content in order to manager her position
+        position: fixed;
+        right: 10px;
         margin: auto;
+        // add a white bg color here 
+        background: #fff;
         padding: 2rem 2rem;
         border: 1px solid $light-gray;
         border-radius: 1rem;
